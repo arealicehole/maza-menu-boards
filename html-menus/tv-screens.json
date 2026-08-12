@@ -1,0 +1,75 @@
+{
+  "_comment": "TV screen definitions. Item refs are [Section, Item] pairs resolved from menu.json at build time — prices/notes always come from menu.json, never hardcoded here. Edit groupings/cards freely; text data stays in menu.json.",
+  "screens": [
+    {
+      "id": "screen1-wraps",
+      "template": "tv-screen1.html",
+      "title": "Wraps",
+      "subtitle": "Wrapped with hummus, tomato, onion, lettuce, pickle, and garlic sauce",
+      "groups": [
+        { "name": "Shredded Wraps", "items": [["Wraps", "Shredded Chicken Wrap"], ["Wraps", "Shredded Steak Wrap"]] },
+        { "name": "Shish Kebab Wraps", "items": [["Wraps", "Beef + Lamb Shish Kebab Wrap"], ["Wraps", "Chicken Shish Kebab Wrap"]] },
+        { "name": "Tikka Wraps", "items": [["Wraps", "Chicken Tikka Wrap"], ["Wraps", "Lamb Tikka Wrap"], ["Wraps", "Ribeye Tikka Wrap"]] },
+        { "name": "Maza Specialty Wraps", "items": [["Wraps", "Beef Gyro"], ["Wraps", "Crispy Chicken Wrap"], ["Wraps", "Falafel Wrap"], ["Wraps", "Arayes Lahm or Dajaj"]] }
+      ],
+      "cards": [["Wraps", "Beef Gyro"], ["Wraps", "Beef + Lamb Shish Kebab Wrap"], ["Wraps", "Ribeye Tikka Wrap"], ["Wraps", "Arayes Lahm or Dajaj"]],
+      "banner": {
+        "title": "Make It a Combo",
+        "subtitle": "Upgrade any meal to a combo",
+        "item": ["Wrap Upgrades", "Combo Upgrade"]
+      }
+    },
+    {
+      "id": "screen2-plates",
+      "template": "tv-screen2.html",
+      "title": "Plates",
+      "columns": [
+        [
+          { "name": "Chicken", "items": [["Plates", "Chicken Shish Kebab"], ["Plates", "Chicken Tikka Plate"], ["Plates", "Grilled Chicken Teriyaki Plate"], ["Plates", "Shredded Chicken Plate"]] },
+          { "name": "Lamb", "items": [["Plates", "Lamb Tikka Plate"]] },
+          { "name": "Plant Based", "items": [["Plates", "Falafel"]] }
+        ],
+        [
+          { "name": "Beef", "items": [["Plates", "Beef + Lamb Shish Kebab"], ["Plates", "Ribeye Tikka Plate"], ["Plates", "Shredded Steak Plate"]] },
+          { "name": "Mixed", "items": [["Plates", "Mix Kebab"], ["Plates", "Maza Grill"], ["Plates", "Appetizer Plate"]] }
+        ]
+      ],
+      "gallery": [["Plates", "Chicken Tikka Plate"], ["Plates", "Beef + Lamb Shish Kebab"], ["Plates", "Maza Grill"], ["Plates", "Shredded Chicken Plate"], ["Plates", "Appetizer Plate"]],
+      "specials": {
+        "title": "Specials",
+        "hero": ["Specials", "Maza Special"],
+        "items": [["Specials", "Maza Special"], ["Specials", "Family Meal"], ["Specials", "Samak Tandoor"]]
+      }
+    },
+    {
+      "id": "screen3-loaded",
+      "template": "tv-screen3.html",
+      "halal_badge": true,
+      "row1": {
+        "left": { "section": "Loaded Fries" },
+        "left_card": { "ref": ["Loaded Fries", "Shredded Steak"], "caption": "Loaded Steak Fries" },
+        "right": { "section": "Loaded Hummus" },
+        "right_card": { "ref": ["Loaded Hummus", "Shredded Chicken"], "caption": "Loaded Chicken Hummus" }
+      },
+      "row2": {
+        "burgers": { "section": "Burgers" },
+        "burgers_card": { "ref": ["Burgers", "Beef Burger"], "caption": "" },
+        "kids": { "section": "Kids Meals" },
+        "kids_card": { "ref": ["Kids Meals", "Crispy Chicken Sandwich"], "caption": "" },
+        "sides_title": "Sides",
+        "sides_groups": [
+          { "name": "Dips & Spreads", "items": [["Sides", "Hummus with tahini and pita"], ["Sides", "Tzatziki"], ["Sides", "Muhammara"], ["Sides", "Baba Ghanoush"], ["Sides", "Tabouleh"]] },
+          { "name": "Classic Sides", "items": [["Sides", "Fries"], ["Sides", "Rice"], ["Sides", "Pita"], ["Sides", "Side Salad"]] },
+          { "name": "Premium Sides", "items": [["Sides", "Dolma"], ["Sides", "Falafel (4pc)"], ["Sides", "Sambusah (2pc)"], ["Sides", "Kibbeh (3pc)"], ["Sides", "Maza Salad"]] }
+        ],
+        "sides_card": { "ref": ["Sides", "Kibbeh (3pc)"], "caption": "Kibbeh (3pc)" }
+      },
+      "row3": {
+        "desserts_card": { "ref": ["Baklava", "Walnut or Pistachio"], "caption": "" },
+        "desserts": { "title": "Desserts", "items": [["Baklava", "Walnut or Pistachio"]] },
+        "drinks": { "section": "Drinks" },
+        "sharbat": { "section": "Sharbat" }
+      }
+    }
+  ]
+}

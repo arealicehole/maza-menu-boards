@@ -11,7 +11,17 @@ base/
 generated/
   screen1/     Maza bot i2i outputs for screen 1
   screen2/     Maza bot i2i outputs for screen 2
+html-menus/    Data-driven HTML TV menu system + rendered outputs (preferred)
 ```
+
+## HTML TV menus (preferred, editable)
+
+`html-menus/` is a snapshot of the data-driven HTML menu system (real photos, no image generation). Rendered TV boards live in `html-menus/out/`:
+
+- `screen1-wraps.html` / `screen2-plates.html` / `screen3-loaded.html`
+- `screen1-wraps-4k.png` / `screen2-plates-4k.png` / `screen3-loaded-4k.png` — 3840x2160 TV-ready screenshots
+
+Text/prices stay in the host `menu.json` source of truth; rebuild in the host checkout, then commit the refreshed `html-menus/out/` files here.
 
 ## Naming Convention
 

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAZA TV — Loaded / Sides / Drinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tv-theme.css">
+<style>
+  /* halal badge */
+  .halal-band { display: flex; justify-content: center; padding: 2px 0 8px; }
+  .halal-badge {
+    border: 2px solid var(--gold);
+    outline: 1px solid rgba(211,171,94,.45);
+    outline-offset: 4px;
+    border-radius: 70px 70px 8px 8px;
+    padding: 8px 46px 10px;
+    text-align: center;
+    color: var(--gold);
+  }
+  .halal-badge .ar { font-size: 26px; line-height: 1.1; }
+  .halal-badge .en { font-family: var(--font-body); font-weight: 600; font-size: 13px; letter-spacing: .28em; margin-top: 2px; }
+
+  .band-title {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 27px;
+    letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .band-title .rule { display: inline-block; width: 40px; height: 2px; background: var(--gold); vertical-align: middle; margin: 0 10px 6px; }
+  .band-sub { font-style: italic; font-weight: 300; font-size: 13.5px; color: var(--gold-light); text-align: center; margin-top: 3px; }
+
+  /* ROW 1 */
+  .s3-row1 { display: flex; align-items: stretch; gap: 26px; padding: 10px 0; }
+  .s3-row1 .text-block { flex: 1.1; display: flex; flex-direction: column; justify-content: center; }
+  .s3-row1 .text-block .tv-item .name, .s3-row1 .text-block .tv-item .price { font-size: 20px; }
+  .s3-row1 figure { width: 24%; display: flex; flex-direction: column; }
+  .s3-row1 .photo-card { height: 210px; }
+
+  /* ROW 2 */
+  .s3-row2 { display: flex; align-items: stretch; gap: 22px; padding: 12px 0; }
+  .s3-row2 .mini-block { display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-row2 .mini-block .tv-item .name, .s3-row2 .mini-block .tv-item .price { font-size: 19.5px; white-space: normal; }
+  .s3-row2 .mini-block .tv-note { font-size: 13px; }
+  .s3-row2 figure { width: 150px; }
+  .s3-row2 .photo-card { height: 190px; }
+  .s3-sides { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s3-sides-cols { flex: 1; display: flex; gap: 16px; margin-top: 6px; }
+  .s3-sides-col { min-width: 0; }
+  .s3-sides-col.dips { flex: 1.35; }
+  .s3-sides-col.classic { flex: .85; }
+  .s3-sides-col.premium { flex: 1; }
+  .s3-sides-col + .s3-sides-col { border-left: 1px solid rgba(211,171,94,.4); padding-left: 16px; }
+  .s3-sides-col .group-title { font-size: 15.5px; letter-spacing: .18em; margin: 0 0 6px; text-align: center; }
+  .s3-sides-col .tv-item { margin: 5px 0; }
+  .s3-sides-col .tv-item .name { font-size: 15.5px; white-space: normal; }
+  .s3-sides-col .tv-item .price { font-size: 15.5px; }
+  .s3-sides-col .tv-note { font-size: 12px; margin: -2px 0 3px; }
+
+  /* ROW 3 */
+  .s3-row3 { flex: 1; display: flex; align-items: stretch; gap: 26px; padding-top: 12px; min-height: 0; }
+  .s3-desserts { display: flex; align-items: center; gap: 22px; }
+  .s3-desserts figure { width: 250px; }
+  .s3-desserts .photo-card { height: 230px; }
+  .s3-desserts .text-block { display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .s3-desserts .text-block .tv-item .name, .s3-desserts .text-block .tv-item .price { font-size: 19.5px; white-space: normal; }
+  .s3-drinks { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s3-drinks-cols { flex: 1; display: flex; gap: 30px; margin-top: 6px; }
+  .s3-drinks-col { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-drinks-col .tv-item { margin: 5px 0; }
+  .s3-drinks-col .tv-item .name { font-size: 18.5px; white-space: normal; }
+  .s3-drinks-col .tv-item .price { font-size: 18.5px; }
+  .s3-drinks-col .tv-note { font-size: 13px; margin: -2px 0 3px; }
+  .s3-sharbat { width: 26%; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-sharbat .tv-item .name, .s3-sharbat .tv-item .price { font-size: 18.5px; white-space: normal; }
+  .s3-sharbat .tv-note { font-size: 13px; }
+  .s3-sharbat .band-title, .s3-sharbat .band-sub { text-align: center; }
+
+  .s3-band { display: flex; align-items: baseline; justify-content: center; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="halal-band">
+    <div class="halal-badge">
+      <div class="ar">حلال</div>
+      <div class="en">100% HALAL CERTIFIED</div>
+    </div>
+  </div>
+
+  <!-- ROW 1: LOADED FRIES | LOADED HUMMUS -->
+  <div class="s3-row1">
+    <div class="text-block">
+      <h2 class="band-title"><span class="rule"></span>Loaded Fries<span class="rule"></span></h2>
+      <p class="band-sub">Choose up to 3 sauces: Tahini, Garlic Sauce, Sriracha Mayo, Maza Special Sauce, Pomegranate Molasses. Sauce on the side available.</p>
+      
+      <div class="tv-item"><span class="name">Shredded Chicken</span><span class="dots"></span><span class="price">11.49</span></div>
+      
+      <div class="tv-item"><span class="name">Shredded Steak</span><span class="dots"></span><span class="price">12.89</span></div>
+      
+      <div class="tv-item"><span class="name">Gyro</span><span class="dots"></span><span class="price">12.89</span></div>
+      
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/loaded-fries-shredded-steak.jpg" alt="Loaded Steak Fries"></div>
+      <figcaption class="photo-caption">Loaded Steak Fries</figcaption>
+    </figure>
+    <div class="v-divider"></div>
+    <div class="text-block">
+      <h2 class="band-title"><span class="rule"></span>Loaded Hummus<span class="rule"></span></h2>
+      <p class="band-sub">Choose up to 3 sauces: Tahini, Garlic Sauce, Sriracha Mayo, Maza Special Sauce, Pomegranate Molasses. Sauce on the side available.</p>
+      
+      <div class="tv-item"><span class="name">Shredded Chicken</span><span class="dots"></span><span class="price">11.49</span></div>
+      
+      <div class="tv-item"><span class="name">Shredded Steak</span><span class="dots"></span><span class="price">12.89</span></div>
+      
+      <div class="tv-item"><span class="name">Gyro</span><span class="dots"></span><span class="price">12.89</span></div>
+      
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/loaded-hummus-shredded-chicken.jpg" alt="Loaded Chicken Hummus"></div>
+      <figcaption class="photo-caption">Loaded Chicken Hummus</figcaption>
+    </figure>
+  </div>
+
+  <hr class="h-rule">
+
+  <!-- ROW 2: BURGERS | KIDS | SIDES -->
+  <div class="s3-row2">
+    <div class="mini-block">
+      <h2 class="band-title">Burgers</h2>
+      <p class="band-sub">Handmade in House, never frozen</p>
+      
+      <div class="tv-item"><span class="name">Beef Burger</span><span class="dots"></span><span class="price">12.47</span></div>
+      
+      <div class="tv-item"><span class="name">Grilled Chicken</span><span class="dots"></span><span class="price">12.47</span></div>
+      
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/burgers-beef-burger.jpg" alt=""></div>
+    </figure>
+    <div class="mini-block">
+      <h2 class="band-title">Kids Meals</h2>
+      <p class="band-sub">Comes with Fries</p>
+      
+      <div class="tv-item"><span class="name">Crispy Chicken Sandwich</span><span class="dots"></span><span class="price">11.85</span></div>
+      
+      <div class="tv-item"><span class="name">All Beef Burger</span><span class="dots"></span><span class="price">11.85</span></div>
+      
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/kids-meals-crispy-chicken-sandwich.jpg" alt=""></div>
+    </figure>
+    <div class="s3-sides">
+      <h2 class="band-title"><span class="rule"></span>Sides<span class="rule"></span></h2>
+      <div class="s3-sides-cols">
+        
+        <div class="s3-sides-col dips">
+          <h4 class="group-title">Dips &amp; Spreads</h4>
+          
+          <div class="tv-item"><span class="name">Hummus with tahini and pita</span><span class="dots"></span><span class="price">5.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Tzatziki</span><span class="dots"></span><span class="price">SM 1.99 | LG 4.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Muhammara</span><span class="dots"></span><span class="price">SM 1.99 | LG 4.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Baba Ghanoush</span><span class="dots"></span><span class="price">SM 1.99 | LG 4.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Tabouleh</span><span class="dots"></span><span class="price">4.99</span></div>
+          
+          
+        </div>
+        
+        <div class="s3-sides-col classic">
+          <h4 class="group-title">Classic Sides</h4>
+          
+          <div class="tv-item"><span class="name">Fries</span><span class="dots"></span><span class="price">3.49</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Rice</span><span class="dots"></span><span class="price">3.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Pita</span><span class="dots"></span><span class="price">1.25</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Side Salad</span><span class="dots"></span><span class="price">3.99</span></div>
+          
+          
+        </div>
+        
+        <div class="s3-sides-col premium">
+          <h4 class="group-title">Premium Sides</h4>
+          
+          <div class="tv-item"><span class="name">Dolma</span><span class="dots"></span><span class="price">5.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Falafel (4pc)</span><span class="dots"></span><span class="price">3.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Sambusah (2pc)</span><span class="dots"></span><span class="price">9.49</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Kibbeh (3pc)</span><span class="dots"></span><span class="price">11.99</span></div>
+          
+          
+          <div class="tv-item"><span class="name">Maza Salad</span><span class="dots"></span><span class="price">13.99</span></div>
+          <p class="tv-note">Choose from: Chicken or Steak</p>
+          
+        </div>
+        
+      </div>
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/sides-kibbeh-3pc.jpg" alt="Kibbeh (3pc)"></div>
+      <figcaption class="photo-caption">Kibbeh (3pc)</figcaption>
+    </figure>
+  </div>
+
+  <hr class="h-rule">
+
+  <!-- ROW 3: DESSERTS | DRINKS | SHARBAT -->
+  <div class="s3-row3">
+    <div class="s3-desserts">
+      <figure>
+        <div class="photo-card"><img src="../photos/baklava-walnut-or-pistachio.jpg" alt=""></div>
+      </figure>
+      <div class="text-block">
+        <h2 class="band-title">Desserts</h2>
+        
+        <div class="tv-item"><span class="name">Baklava — Walnut or Pistachio</span><span class="dots"></span><span class="price">3.99</span></div>
+        
+      </div>
+    </div>
+    <div class="v-divider"></div>
+    <div class="s3-drinks">
+      <h2 class="band-title"><span class="rule"></span>Drinks<span class="rule"></span></h2>
+      <div class="s3-drinks-cols">
+        
+        <div class="s3-drinks-col">
+          
+          
+          <div class="tv-item"><span class="name">Bottled Water</span><span class="dots"></span><span class="price">1.49</span></div>
+          
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Middle Eastern Black Tea</span><span class="dots"></span><span class="price">2.99</span></div>
+          
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Minute Maid Apple Juice</span><span class="dots"></span><span class="price">2.75</span></div>
+          <p class="tv-note">10oz</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Mexican Coke</span><span class="dots"></span><span class="price">3.99</span></div>
+          <p class="tv-note">355ml glass</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Al Reef Pomegranate Juice</span><span class="dots"></span><span class="price">2.49</span></div>
+          <p class="tv-note">Arabic juice</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Al Reef Orange Juice</span><span class="dots"></span><span class="price">2.49</span></div>
+          <p class="tv-note">Arabic juice</p>
+          
+          
+        </div>
+        
+        <div class="s3-drinks-col">
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Fountain Drink</span><span class="dots"></span><span class="price">2.49</span></div>
+          <p class="tv-note">20oz, refillable</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Peace Tea Raspberry</span><span class="dots"></span><span class="price">2.25</span></div>
+          <p class="tv-note">16oz can</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Minute Maid Orange Juice 100%</span><span class="dots"></span><span class="price">2.75</span></div>
+          <p class="tv-note">10oz</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Mexican Fanta Grape</span><span class="dots"></span><span class="price">3.99</span></div>
+          <p class="tv-note">355ml glass</p>
+          
+          
+          
+          
+          
+          <div class="tv-item"><span class="name">Al Reef Mango Juice</span><span class="dots"></span><span class="price">2.49</span></div>
+          <p class="tv-note">Arabic juice</p>
+          
+          
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    <div class="v-divider"></div>
+    <div class="s3-sharbat">
+      <h2 class="band-title">Sharbat</h2>
+      <p class="band-sub">House-made · no refill</p>
+      
+      <div class="tv-item"><span class="name">Karkadeh</span><span class="dots"></span><span class="price">SM 1.99 | LG 3.99</span></div>
+      <p class="tv-note">Hibiscus · SM 12oz · LG 24oz</p>
+      
+      <div class="tv-item"><span class="name">Iced Chai</span><span class="dots"></span><span class="price">SM 1.99 | LG 3.99</span></div>
+      <p class="tv-note">Ceylon black tea · SM 12oz · LG 24oz</p>
+      
+      <div class="tv-item"><span class="name">Fresh Squeezed Orange Juice</span><span class="dots"></span><span class="price">SM 1.99 | LG 3.99</span></div>
+      <p class="tv-note">Fresh squeezed · SM 12oz · LG 24oz</p>
+      
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

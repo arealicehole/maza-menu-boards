@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAZA TV — Loaded / Sides / Drinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tv-theme.css">
+<style>
+  /* halal badge */
+  .halal-band { display: flex; justify-content: center; padding: 2px 0 8px; }
+  .halal-badge {
+    border: 2px solid var(--gold);
+    outline: 1px solid rgba(211,171,94,.45);
+    outline-offset: 4px;
+    border-radius: 70px 70px 8px 8px;
+    padding: 8px 46px 10px;
+    text-align: center;
+    color: var(--gold);
+  }
+  .halal-badge .ar { font-size: 26px; line-height: 1.1; }
+  .halal-badge .en { font-family: var(--font-body); font-weight: 600; font-size: 13px; letter-spacing: .28em; margin-top: 2px; }
+
+  .band-title {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 27px;
+    letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .band-title .rule { display: inline-block; width: 40px; height: 2px; background: var(--gold); vertical-align: middle; margin: 0 10px 6px; }
+  .band-sub { font-style: italic; font-weight: 300; font-size: 13.5px; color: var(--gold-light); text-align: center; margin-top: 3px; }
+
+  /* ROW 1 */
+  .s3-row1 { display: flex; align-items: stretch; gap: 26px; padding: 10px 0; }
+  .s3-row1 .text-block { flex: 1.1; display: flex; flex-direction: column; justify-content: center; }
+  .s3-row1 .text-block .tv-item .name, .s3-row1 .text-block .tv-item .price { font-size: 20px; }
+  .s3-row1 figure { width: 24%; display: flex; flex-direction: column; }
+  .s3-row1 .photo-card { height: 210px; }
+
+  /* ROW 2 */
+  .s3-row2 { display: flex; align-items: stretch; gap: 22px; padding: 12px 0; }
+  .s3-row2 .mini-block { display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-row2 .mini-block .tv-item .name, .s3-row2 .mini-block .tv-item .price { font-size: 19.5px; white-space: normal; }
+  .s3-row2 .mini-block .tv-note { font-size: 13px; }
+  .s3-row2 figure { width: 150px; }
+  .s3-row2 .photo-card { height: 190px; }
+  .s3-sides { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s3-sides-cols { flex: 1; display: flex; gap: 16px; margin-top: 6px; }
+  .s3-sides-col { min-width: 0; }
+  .s3-sides-col.dips { flex: 1.35; }
+  .s3-sides-col.classic { flex: .85; }
+  .s3-sides-col.premium { flex: 1; }
+  .s3-sides-col + .s3-sides-col { border-left: 1px solid rgba(211,171,94,.4); padding-left: 16px; }
+  .s3-sides-col .group-title { font-size: 15.5px; letter-spacing: .18em; margin: 0 0 6px; text-align: center; }
+  .s3-sides-col .tv-item { margin: 5px 0; }
+  .s3-sides-col .tv-item .name { font-size: 15.5px; white-space: normal; }
+  .s3-sides-col .tv-item .price { font-size: 15.5px; }
+  .s3-sides-col .tv-note { font-size: 12px; margin: -2px 0 3px; }
+
+  /* ROW 3 */
+  .s3-row3 { flex: 1; display: flex; align-items: stretch; gap: 26px; padding-top: 12px; min-height: 0; }
+  .s3-desserts { display: flex; align-items: center; gap: 22px; }
+  .s3-desserts figure { width: 250px; }
+  .s3-desserts .photo-card { height: 230px; }
+  .s3-desserts .text-block { display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .s3-desserts .text-block .tv-item .name, .s3-desserts .text-block .tv-item .price { font-size: 19.5px; white-space: normal; }
+  .s3-drinks { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s3-drinks-cols { flex: 1; display: flex; gap: 30px; margin-top: 6px; }
+  .s3-drinks-col { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-drinks-col .tv-item { margin: 5px 0; }
+  .s3-drinks-col .tv-item .name { font-size: 18.5px; white-space: normal; }
+  .s3-drinks-col .tv-item .price { font-size: 18.5px; }
+  .s3-drinks-col .tv-note { font-size: 13px; margin: -2px 0 3px; }
+  .s3-sharbat { width: 26%; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s3-sharbat .tv-item .name, .s3-sharbat .tv-item .price { font-size: 18.5px; white-space: normal; }
+  .s3-sharbat .tv-note { font-size: 13px; }
+  .s3-sharbat .band-title, .s3-sharbat .band-sub { text-align: center; }
+
+  .s3-band { display: flex; align-items: baseline; justify-content: center; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="halal-band">
+    <div class="halal-badge">
+      <div class="ar">حلال</div>
+      <div class="en">100% HALAL CERTIFIED</div>
+    </div>
+  </div>
+
+  <!-- ROW 1: LOADED FRIES | LOADED HUMMUS -->
+  <div class="s3-row1">
+    <div class="text-block">
+      <h2 class="band-title"><span class="rule"></span>{{ s.row1.left.name }}<span class="rule"></span></h2>
+      <p class="band-sub">{{ s.row1.left.subtitle }}</p>
+      {% for item in s.row1.left["items"] %}
+      <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+      {% endfor %}
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/{{ s.row1.left_card.ref.photo }}" alt="{{ s.row1.left_card.caption }}"></div>
+      <figcaption class="photo-caption">{{ s.row1.left_card.caption }}</figcaption>
+    </figure>
+    <div class="v-divider"></div>
+    <div class="text-block">
+      <h2 class="band-title"><span class="rule"></span>{{ s.row1.right.name }}<span class="rule"></span></h2>
+      <p class="band-sub">{{ s.row1.right.subtitle }}</p>
+      {% for item in s.row1.right["items"] %}
+      <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+      {% endfor %}
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/{{ s.row1.right_card.ref.photo }}" alt="{{ s.row1.right_card.caption }}"></div>
+      <figcaption class="photo-caption">{{ s.row1.right_card.caption }}</figcaption>
+    </figure>
+  </div>
+
+  <hr class="h-rule">
+
+  <!-- ROW 2: BURGERS | KIDS | SIDES -->
+  <div class="s3-row2">
+    <div class="mini-block">
+      <h2 class="band-title">{{ s.row2.burgers.name }}</h2>
+      <p class="band-sub">{{ s.row2.burgers.subtitle }}</p>
+      {% for item in s.row2.burgers["items"] %}
+      <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+      {% endfor %}
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/{{ s.row2.burgers_card.ref.photo }}" alt=""></div>
+    </figure>
+    <div class="mini-block">
+      <h2 class="band-title">{{ s.row2.kids.name }}</h2>
+      <p class="band-sub">{{ s.row2.kids.subtitle }}</p>
+      {% for item in s.row2.kids["items"] %}
+      <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+      {% endfor %}
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/{{ s.row2.kids_card.ref.photo }}" alt=""></div>
+    </figure>
+    <div class="s3-sides">
+      <h2 class="band-title"><span class="rule"></span>{{ s.row2.sides_title }}<span class="rule"></span></h2>
+      <div class="s3-sides-cols">
+        {% for g in s.row2.sides_groups %}
+        <div class="s3-sides-col {{ ['dips','classic','premium'][loop.index0] }}">
+          <h4 class="group-title">{{ g.name }}</h4>
+          {% for item in g["items"] %}
+          <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+          {% if item.first_note %}<p class="tv-note">{{ item.first_note }}</p>{% endif %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <figure>
+      <div class="photo-card"><img src="../photos/{{ s.row2.sides_card.ref.photo }}" alt="{{ s.row2.sides_card.caption }}"></div>
+      <figcaption class="photo-caption">{{ s.row2.sides_card.caption }}</figcaption>
+    </figure>
+  </div>
+
+  <hr class="h-rule">
+
+  <!-- ROW 3: DESSERTS | DRINKS | SHARBAT -->
+  <div class="s3-row3">
+    <div class="s3-desserts">
+      <figure>
+        <div class="photo-card"><img src="../photos/{{ s.row3.desserts_card.ref.photo }}" alt=""></div>
+      </figure>
+      <div class="text-block">
+        <h2 class="band-title">{{ s.row3.desserts.title }}</h2>
+        {% for item in s.row3.desserts["items"] %}
+        <div class="tv-item"><span class="name">Baklava — {{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="v-divider"></div>
+    <div class="s3-drinks">
+      <h2 class="band-title"><span class="rule"></span>{{ s.row3.drinks.name }}<span class="rule"></span></h2>
+      <div class="s3-drinks-cols">
+        {% for half in [0, 1] %}
+        <div class="s3-drinks-col">
+          {% for item in s.row3.drinks["items"] %}
+          {% if (loop.index0 % 2) == half %}
+          <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+          {% if item.first_note %}<p class="tv-note">{{ item.first_note }}</p>{% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="v-divider"></div>
+    <div class="s3-sharbat">
+      <h2 class="band-title">{{ s.row3.sharbat.name }}</h2>
+      <p class="band-sub">{{ s.row3.sharbat.subtitle }}</p>
+      {% for item in s.row3.sharbat["items"] %}
+      <div class="tv-item"><span class="name">{{ item.name }}</span><span class="dots"></span><span class="price">{{ item.price }}</span></div>
+      {% if item.first_note %}<p class="tv-note">{{ item.first_note }}</p>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

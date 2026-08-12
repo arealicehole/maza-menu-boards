@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ brand.name }} — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="menu-header">
+    <img class="logo" src="../assets/logo.png" alt="{{ brand.name }} logo">
+    <div class="restaurant-name">{{ brand.display }}</div>
+    <div class="tagline">{{ brand.tagline }}</div>
+    <div class="gold-rule"></div>
+    <div class="contact">{{ brand.address }} &nbsp;&middot;&nbsp; {{ brand.phone }}</div>
+  </header>
+
+  {% for section in sections %}
+  <section class="menu-section">
+    <h2 class="section-title">{{ section.name }}</h2>
+    {% if section.subtitle %}<p class="section-subtitle">{{ section.subtitle }}</p>{% endif %}
+    <div class="section-rule"></div>
+
+    <div class="items{% if section.compact %} compact{% endif %}">
+      {% for item in section["items"] %}
+      <div class="item">
+        {% if item.photo %}<img class="item-photo" src="../photos/{{ item.photo }}" alt="{{ item.name }}">{% endif %}
+        <div class="item-head">
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-leader"></span>
+          <span class="item-price">{{ item.price }}</span>
+        </div>
+        {% for note in item.all_notes %}<p class="item-note">{{ note }}</p>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <footer class="menu-footer">
+    <span>{{ brand.address }}</span>
+    <span class="halal">100% HALAL</span>
+    <span>{{ brand.hours }}</span>
+  </footer>
+
+</div>
+</body>
+</html>

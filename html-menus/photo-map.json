@@ -1,0 +1,54 @@
+{
+  "_comment": "Item -> real photo mapping. Keys are 'Section > Item' (exact names from menu.json). Photos are copied from PHOTO_LIB into photos/ on build. Add/adjust freely — no image generation, user content only.",
+  "photo_lib": "/srv/storage/onedrive/Sulemon/Customer Files/maza/Video folder",
+  "map": {
+    "Wraps > Beef Gyro": "menu_items/gyro/gyro-on-pita.jpg",
+    "Wraps > Beef + Lamb Shish Kebab Wrap": "menu_items/beef-shish-kebab/beef-shish-kebab-wrap.jpg",
+    "Wraps > Chicken Shish Kebab Wrap": "menu_items/wraps/chicken-shish-kebab-wrap-vertical.jpg",
+    "Wraps > Chicken Tikka Wrap": "menu_items/chicken-tikka/chicken-tikka-on-rice-close.jpg",
+    "Wraps > Crispy Chicken Wrap": "menu_items/wraps/crispy-chicken-wrap-insides.jpg",
+    "Wraps > Falafel Wrap": "menu_items/wraps/falafel-wrap-vertical.jpg",
+    "Wraps > Arayes Lahm or Dajaj": "menu_items/wraps/arayes-lahm-vertical.jpg",
+    "Wraps > Ribeye Tikka Wrap": "menu_items/wraps/ribeye-tikka-wrap-vertical.jpg",
+    "Wraps > Shredded Chicken Wrap": "menu_items/wraps/geneic-wrap-photo.jpg",
+
+    "Plates > Beef + Lamb Shish Kebab": "menu_items/beef-shish-kebab/beef-lamb-shish-kebab-plate-angle.jpg",
+    "Plates > Chicken Shish Kebab": "menu_items/shish-kebab-grill/well-done-shish-kebabs-off-the-grill.jpg",
+    "Plates > Chicken Tikka Plate": "menu_items/chicken-tikka/chicken-tikka-plate-close.jpg",
+    "Plates > Lamb Tikka Plate": "menu_items/lamb-tikka/lamb-tikka-plate-with-jalepeno.jpg",
+    "Plates > Ribeye Tikka Plate": "menu_items/shish-kebab-grill/many-different-shish-on-grill-fire.jpg",
+    "Plates > Mix Kebab": "menu_items/mixed-kebab/mixed-kebab-plate.jpg",
+    "Plates > Falafel": "menu_items/appetizers/falafel=plate-spread-out.jpg",
+    "Plates > Appetizer Plate": "menu_items/appetizers/appetizer-plate.jpg",
+    "Plates > Maza Grill": "menu_items/maza-special/maza-grill-plate.jpg",
+    "Plates > Grilled Chicken Teriyaki Plate": "menu_items/burgers/grilled-chicken-teriyaki.jpg",
+    "Plates > Shredded Chicken Plate": "menu_items/shredded-plates/shredded-chicken-plate.jpg",
+    "Plates > Shredded Steak Plate": "menu_items/shredded-plates/shredded-steak-plate-no-sides.jpg",
+
+    "Loaded Fries > Shredded Steak": "menu_items/loaded-fries/loaded-fries-steak.jpg",
+    "Loaded Fries > Gyro": "menu_items/gyro/loaded-fries-gyro.jpg",
+
+    "Loaded Hummus > Shredded Chicken": "menu_items/loaded-hummus/loaded-hummus-chicken.jpg",
+    "Loaded Hummus > Shredded Steak": "menu_items/loaded-hummus/loaded-hummus-steak.jpg",
+
+    "Specials > Maza Special": "menu_items/maza-special/maza-special-top.jpg",
+    "Specials > Family Meal": "menu_items/sides/all-the-sides.jpg",
+    "Specials > Samak Tandoor": "menu_items/samak/samak-promo.jpg",
+
+    "Burgers > Beef Burger": "menu/og/burger-fries-combo.jpg",
+    "Burgers > Grilled Chicken": "menu_items/burgers/grilled-chicken-burger-with-fries.jpg",
+
+    "Kids Meals > Crispy Chicken Sandwich": "menu_items/burgers/crispy-chicken-sandwich-back.jpg",
+    "Kids Meals > All Beef Burger": "menu/og/burger-fries-combo.jpg",
+
+    "Sides > Sambusah (2pc)": "menu_items/appetizers/sambusah.jpg",
+    "Sides > Kibbeh (3pc)": "menu_items/appetizers/kibbeh.jpg",
+    "Sides > Hummus with tahini and pita": "menu_items/appetizers/hummus-plate-with-pita.jpg",
+    "Sides > Tabouleh": "menu_items/appetizers/tabbouleh-close.jpg",
+    "Sides > Side Salad": "menu_items/sides/side-sald-closeup.jpg",
+    "Sides > Maza Salad": "menu_items/sides/maza-salad-old-version.jpg",
+    "Sides > Fries": "menu_items/sides/side-fries-vertical.jpg",
+
+    "Baklava > Walnut or Pistachio": "menu_items/baklava/baklava-tray-angle.jpg"
+  }
+}

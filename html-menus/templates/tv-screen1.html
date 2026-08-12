@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAZA TV — {{ s.title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tv-theme.css">
+<style>
+  .s1-main { flex: 1; display: flex; gap: 36px; min-height: 0; }
+  .s1-left { flex: 1.05; display: flex; flex-direction: column; padding-top: 6px; }
+  .s1-groups { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; margin-top: 6px; }
+  .s1-left .group-title { font-size: 22px; margin: 0 0 4px; }
+  .s1-left .tv-item { margin: 8px 0; }
+  .s1-left .tv-item .name { font-size: 24px; }
+  .s1-left .tv-item .price { font-size: 24px; }
+  .s1-left .tv-note { font-size: 16.5px; }
+
+  /* right: 2x2 grid, square-ish photo slots suit the portrait wrap shots */
+  .s1-right { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; min-height: 0; }
+  .s1-card {
+    display: flex; flex-direction: column;
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .s1-card .photo-card { flex: 1; min-height: 0; }
+  .s1-card .photo-card img { border: none; border-radius: 0; height: 100%; }
+  .s1-card .card-detail {
+    display: flex; align-items: baseline; justify-content: center; gap: 12px;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(211,171,94,.5);
+  }
+  .s1-card .card-name { font-weight: 600; font-size: 18.5px; letter-spacing: .04em; text-align: center; }
+  .s1-card .card-sep { color: var(--gold); font-size: 13px; }
+  .s1-card .card-price { font-weight: 600; font-size: 21px; color: var(--gold); white-space: nowrap; }
+
+  .combo-banner {
+    margin-top: 24px;
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+  }
+  .combo-banner .cb-title {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 34px;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .combo-banner .cb-sub { font-style: italic; font-weight: 300; font-size: 17px; color: var(--gold-light); white-space: nowrap; }
+  .combo-banner .cb-deal { display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
+  .combo-banner .cb-item { font-size: 20px; }
+  .combo-banner .cb-dots { width: 90px; border-bottom: 2px dotted rgba(211,171,94,.55); transform: translateY(-5px); }
+  .combo-banner .cb-price { font-weight: 600; font-size: 28px; }
+  .combo-banner .cb-inc { font-size: 16px; color: var(--gold-light); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="s1-main">
+    <div class="s1-left">
+      <div class="screen-kicker">— Maza —</div>
+      <h1 class="screen-title"><span class="rule"></span><span class="orn">❖</span>{{ s.title }}<span class="orn">❖</span><span class="rule"></span></h1>
+      <p class="screen-subtitle">{{ s.subtitle }}</p>
+
+      <div class="s1-groups">
+        {% for g in s.groups %}
+        <h3 class="group-title"><span class="dash">—</span><span class="orn">❖</span>{{ g.name }}<span class="orn">❖</span><span class="dash">—</span></h3>
+        {% for item in g["items"] %}
+        <div class="tv-item">
+          <span class="name">{{ item.name }}</span>
+          <span class="dots"></span>
+          <span class="price">{{ item.price }}</span>
+        </div>
+        {% for note in item.all_notes %}<p class="tv-note">{{ note }}</p>{% endfor %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="v-divider"></div>
+
+    <div class="s1-right">
+      {% for item in s.cards %}
+      <div class="s1-card">
+        <div class="photo-card"><img src="../photos/{{ item.photo }}" alt="{{ item.name }}"></div>
+        <div class="card-detail">
+          <span class="card-name">{{ item.name }}</span>
+          <span class="card-sep">❖</span>
+          <span class="card-price">{{ item.price }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="combo-banner">
+    <span class="cb-title">{{ s.banner.title }}</span>
+    <span class="cb-sub">— {{ s.banner.subtitle }} —</span>
+    <span class="cb-deal">
+      <span class="cb-item">{{ s.banner.item.name }}</span>
+      <span class="cb-dots"></span>
+      <span class="cb-price">{{ s.banner.item.price }}</span>
+    </span>
+    <span class="cb-inc">{{ s.banner.item.first_note }}</span>
+  </div>
+
+</div>
+</body>
+</html>

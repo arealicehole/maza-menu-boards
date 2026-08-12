@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAZA TV — {{ s.title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tv-theme.css">
+<style>
+  .s2-main { flex: 1; display: flex; gap: 30px; min-height: 0; }
+
+  .s2-left { width: 39%; display: flex; flex-direction: column; min-height: 0; }
+  .s2-cols { flex: 1; display: flex; gap: 26px; margin-top: 10px; min-height: 0; }
+  .s2-col { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s2-left .group-title { font-size: 19px; letter-spacing: .22em; text-align: left; margin: 0 0 4px; }
+  .s2-left .tv-item { margin: 6px 0; }
+  .s2-left .tv-item .name { font-size: 20px; white-space: normal; }
+  .s2-left .tv-item .price { font-size: 20px; }
+  .s2-left .tv-note { font-size: 14.5px; margin: -2px 0 4px; }
+
+  .s2-right { flex: 1; display: flex; flex-direction: column; gap: 20px; min-height: 0; }
+
+  .s2-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .s2-gallery figure { margin: 0; }
+  .s2-gallery figure:nth-child(-n+3) { grid-column: span 2; }
+  .s2-gallery figure:nth-child(n+4) { grid-column: span 3; }
+  .s2-gallery .photo-card { height: 240px; }
+
+  .specials-box {
+    flex: 1;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    padding: 14px 26px 18px;
+    display: flex; flex-direction: column;
+    min-height: 0;
+  }
+  .specials-box .screen-title { font-size: 38px; }
+  .specials-box .screen-title .rule { width: 60px; }
+  .specials-inner { flex: 1; display: flex; gap: 30px; align-items: stretch; margin-top: 8px; min-height: 0; }
+  .specials-hero { width: 42%; }
+  .specials-hero img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 12px; border: 2px solid var(--gold);
+  }
+  .specials-items { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .specials-items .tv-item { margin: 8px 0 4px; }
+  .specials-items .tv-item .name { font-size: 24px; }
+  .specials-items .tv-item .price { font-size: 24px; }
+  .specials-items .tv-note { font-size: 15.5px; line-height: 1.45; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="s2-main">
+    <div class="s2-left">
+      <h1 class="screen-title"><span class="rule"></span><span class="orn">❖</span>{{ s.title }}<span class="orn">❖</span><span class="rule"></span></h1>
+      <div class="s2-cols">
+        {% for col in s.columns %}
+        <div class="s2-col">
+          {% for g in col %}
+          <h3 class="group-title"><span class="dash">—</span> {{ g.name }}</h3>
+          {% for item in g["items"] %}
+          <div class="tv-item">
+            <span class="name">{{ item.name }}</span>
+            <span class="dots"></span>
+            <span class="price">{{ item.price }}</span>
+          </div>
+          {% for note in item.all_notes %}<p class="tv-note">{{ note }}</p>{% endfor %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="v-divider"></div>
+
+    <div class="s2-right">
+      <div class="s2-gallery">
+        {% for item in s.gallery %}
+        <figure>
+          <div class="photo-card"><img src="../photos/{{ item.photo }}" alt="{{ item.name }}"></div>
+          <figcaption class="photo-caption">{{ item.name }}</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+
+      <div class="specials-box">
+        <h1 class="screen-title"><span class="rule"></span><span class="orn">❖</span>{{ s.specials.title }}<span class="orn">❖</span><span class="rule"></span></h1>
+        <div class="specials-inner">
+          <div class="specials-hero"><img src="../photos/{{ s.specials.hero.photo }}" alt="{{ s.specials.hero.name }}"></div>
+          <div class="specials-items">
+            {% for item in s.specials["items"] %}
+            <div class="tv-item">
+              <span class="name">{{ item.name }}</span>
+              <span class="dots"></span>
+              <span class="price">{{ item.price }}</span>
+            </div>
+            {% for note in item.all_notes %}<p class="tv-note">{{ note }}</p>{% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

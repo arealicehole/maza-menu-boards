@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAZA TV — Plates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tv-theme.css">
+<style>
+  .s2-main { flex: 1; display: flex; gap: 30px; min-height: 0; }
+
+  .s2-left { width: 39%; display: flex; flex-direction: column; min-height: 0; }
+  .s2-cols { flex: 1; display: flex; gap: 26px; margin-top: 10px; min-height: 0; }
+  .s2-col { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .s2-left .group-title { font-size: 19px; letter-spacing: .22em; text-align: left; margin: 0 0 4px; }
+  .s2-left .tv-item { margin: 6px 0; }
+  .s2-left .tv-item .name { font-size: 20px; white-space: normal; }
+  .s2-left .tv-item .price { font-size: 20px; }
+  .s2-left .tv-note { font-size: 14.5px; margin: -2px 0 4px; }
+
+  .s2-right { flex: 1; display: flex; flex-direction: column; gap: 20px; min-height: 0; }
+
+  .s2-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .s2-gallery figure { margin: 0; }
+  .s2-gallery figure:nth-child(-n+3) { grid-column: span 2; }
+  .s2-gallery figure:nth-child(n+4) { grid-column: span 3; }
+  .s2-gallery .photo-card { height: 240px; }
+
+  .specials-box {
+    flex: 1;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    padding: 14px 26px 18px;
+    display: flex; flex-direction: column;
+    min-height: 0;
+  }
+  .specials-box .screen-title { font-size: 38px; }
+  .specials-box .screen-title .rule { width: 60px; }
+  .specials-inner { flex: 1; display: flex; gap: 30px; align-items: stretch; margin-top: 8px; min-height: 0; }
+  .specials-hero { width: 42%; }
+  .specials-hero img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 12px; border: 2px solid var(--gold);
+  }
+  .specials-items { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .specials-items .tv-item { margin: 8px 0 4px; }
+  .specials-items .tv-item .name { font-size: 24px; }
+  .specials-items .tv-item .price { font-size: 24px; }
+  .specials-items .tv-note { font-size: 15.5px; line-height: 1.45; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="s2-main">
+    <div class="s2-left">
+      <h1 class="screen-title"><span class="rule"></span><span class="orn">❖</span>Plates<span class="orn">❖</span><span class="rule"></span></h1>
+      <div class="s2-cols">
+        
+        <div class="s2-col">
+          
+          <h3 class="group-title"><span class="dash">—</span> Chicken</h3>
+          
+          <div class="tv-item">
+            <span class="name">Chicken Shish Kebab</span>
+            <span class="dots"></span>
+            <span class="price">19.67</span>
+          </div>
+          <p class="tv-note">2 Chicken Shish Kebab, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Chicken Tikka Plate</span>
+            <span class="dots"></span>
+            <span class="price">19.67</span>
+          </div>
+          <p class="tv-note">2 Chicken Tikka, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Grilled Chicken Teriyaki Plate</span>
+            <span class="dots"></span>
+            <span class="price">28.99</span>
+          </div>
+          <p class="tv-note">2 Grilled Teriyaki Chicken Cutlets, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Shredded Chicken Plate</span>
+            <span class="dots"></span>
+            <span class="price">18.49</span>
+          </div>
+          <p class="tv-note">Maza in-house shredded chicken over a bed of rice, 1 Pita, salad, baba ghanoush and hummus + tahini</p><p class="tv-note">Choose up to 3 sauces: Tahini, Garlic Sauce, Sriracha Mayo, Maza Special Sauce, Pomegranate Molasses. Sauce on the side available.</p>
+          
+          
+          <h3 class="group-title"><span class="dash">—</span> Lamb</h3>
+          
+          <div class="tv-item">
+            <span class="name">Lamb Tikka Plate</span>
+            <span class="dots"></span>
+            <span class="price">20.71</span>
+          </div>
+          <p class="tv-note">2 Lamb Tikka, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          
+          <h3 class="group-title"><span class="dash">—</span> Plant Based</h3>
+          
+          <div class="tv-item">
+            <span class="name">Falafel</span>
+            <span class="dots"></span>
+            <span class="price">16.55</span>
+          </div>
+          <p class="tv-note">Falafel, 1 Pita, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          
+        </div>
+        
+        <div class="s2-col">
+          
+          <h3 class="group-title"><span class="dash">—</span> Beef</h3>
+          
+          <div class="tv-item">
+            <span class="name">Beef + Lamb Shish Kebab</span>
+            <span class="dots"></span>
+            <span class="price">20.19</span>
+          </div>
+          <p class="tv-note">2 Beef + Lamb Shish Kebab, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Ribeye Tikka Plate</span>
+            <span class="dots"></span>
+            <span class="price">24.87</span>
+          </div>
+          <p class="tv-note">2 Ribeye Tikka, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Shredded Steak Plate</span>
+            <span class="dots"></span>
+            <span class="price">19.99</span>
+          </div>
+          <p class="tv-note">Maza in-house shredded steak over a bed of rice, 1 Pita, salad, baba ghanoush and hummus + tahini</p><p class="tv-note">Choose up to 3 sauces: Tahini, Garlic Sauce, Sriracha Mayo, Maza Special Sauce, Pomegranate Molasses. Sauce on the side available.</p>
+          
+          
+          <h3 class="group-title"><span class="dash">—</span> Mixed</h3>
+          
+          <div class="tv-item">
+            <span class="name">Mix Kebab</span>
+            <span class="dots"></span>
+            <span class="price">20.71</span>
+          </div>
+          <p class="tv-note">1 Chicken Shish Kebab and 1 Beef + Lamb Shish Kebab, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Maza Grill</span>
+            <span class="dots"></span>
+            <span class="price">27.99</span>
+          </div>
+          <p class="tv-note">1 Chicken Tikka, 1 Beef + Lamb Shish Kebab, 1 Chicken Shish Kebab, 1 Pita, rice, salad, baba ghanoush &amp; hummus + tahini</p>
+          
+          <div class="tv-item">
+            <span class="name">Appetizer Plate</span>
+            <span class="dots"></span>
+            <span class="price">15.51</span>
+          </div>
+          <p class="tv-note">Hummus + Tahini, Dolma, Falafel, Baba Ghanoush, 1 Pita and Salad</p>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="v-divider"></div>
+
+    <div class="s2-right">
+      <div class="s2-gallery">
+        
+        <figure>
+          <div class="photo-card"><img src="../photos/plates-chicken-tikka-plate.jpg" alt="Chicken Tikka Plate"></div>
+          <figcaption class="photo-caption">Chicken Tikka Plate</figcaption>
+        </figure>
+        
+        <figure>
+          <div class="photo-card"><img src="../photos/plates-beef-lamb-shish-kebab.jpg" alt="Beef + Lamb Shish Kebab"></div>
+          <figcaption class="photo-caption">Beef + Lamb Shish Kebab</figcaption>
+        </figure>
+        
+        <figure>
+          <div class="photo-card"><img src="../photos/plates-maza-grill.jpg" alt="Maza Grill"></div>
+          <figcaption class="photo-caption">Maza Grill</figcaption>
+        </figure>
+        
+        <figure>
+          <div class="photo-card"><img src="../photos/plates-shredded-chicken-plate.jpg" alt="Shredded Chicken Plate"></div>
+          <figcaption class="photo-caption">Shredded Chicken Plate</figcaption>
+        </figure>
+        
+        <figure>
+          <div class="photo-card"><img src="../photos/plates-appetizer-plate.jpg" alt="Appetizer Plate"></div>
+          <figcaption class="photo-caption">Appetizer Plate</figcaption>
+        </figure>
+        
+      </div>
+
+      <div class="specials-box">
+        <h1 class="screen-title"><span class="rule"></span><span class="orn">❖</span>Specials<span class="orn">❖</span><span class="rule"></span></h1>
+        <div class="specials-inner">
+          <div class="specials-hero"><img src="../photos/specials-maza-special.jpg" alt="Maza Special"></div>
+          <div class="specials-items">
+            
+            <div class="tv-item">
+              <span class="name">Maza Special</span>
+              <span class="dots"></span>
+              <span class="price">48.45</span>
+            </div>
+            <p class="tv-note">1x Chicken Tikka, 1x Lamb Tikka, 1x Beef + Lamb Shish Kebab, 1x Chicken Shish Kebab (4 total), +2 Pita, Rice, Salad, Hummus + Tahini, Baba Ghanoush</p>
+            
+            <div class="tv-item">
+              <span class="name">Family Meal</span>
+              <span class="dots"></span>
+              <span class="price">87.49</span>
+            </div>
+            <p class="tv-note">2x Beef + Lamb Shish Kebab, 2x Chicken Shish Kebab, 2x Chicken Tikka, 2x Lamb Tikka, 2x Ribeye Tikka (10 total), +4 Pita, Rice, Salad, Hummus + Tahini, Baba Ghanoush</p>
+            
+            <div class="tv-item">
+              <span class="name">Samak Tandoor</span>
+              <span class="dots"></span>
+              <span class="price">38.97</span>
+            </div>
+            <p class="tv-note">Whole large fish with rice and salad</p><p class="tv-note">Please allow 1 hour to prepare</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* ============================================================
+   MAZA HTML Menu Theme — single source of brand truth
+   Tokens sampled from brand.json (deep teal surface, gold accent,
+   Cinzel wordmark / Montserrat body). Change values here once;
+   every rendered menu picks them up.
+   ============================================================ */
+
+:root {
+  /* Brand colors (brand.json) */
+  --teal:        #0A1F1E;  /* Maza Deep Teal — primary surface   */
+  --black:       #0E0E0E;  /* Maza Black — logo panel/contrast   */
+  --gold:        #D3AB5E;  /* Maza Gold — primary accent         */
+  --gold-light:  #E9C87B;  /* highlights                         */
+  --gold-dark:   #A87C3D;  /* depth, secondary gold              */
+  --white:       #FFFFFF;  /* high-contrast text                 */
+  --off-white:   #F5F1E8;  /* warm body text                     */
+
+  /* Type (brand.json: Cinzel wordmark + Montserrat subtitle/body) */
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-body:    'Montserrat', 'Futura', 'Avenir Next', sans-serif;
+
+  /* Rhythm */
+  --page-max: 1100px;
+  --gap: 28px;
+  --radius: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { background: var(--teal); }
+
+body {
+  font-family: var(--font-body);
+  color: var(--off-white);
+  background:
+    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(211,171,94,.07), transparent 60%),
+    var(--teal);
+  line-height: 1.5;
+}
+
+.page { max-width: var(--page-max); margin: 0 auto; padding: 56px 48px 72px; }
+
+/* ---------- Header ---------- */
+.menu-header { text-align: center; padding-bottom: 40px; }
+.menu-header .logo {
+  width: 200px; height: auto; display: block; margin: 0 auto 22px;
+  border-radius: 6px;
+}
+.menu-header .restaurant-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: .12em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.menu-header .tagline {
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: 8px;
+}
+.menu-header .contact {
+  font-size: 13px;
+  letter-spacing: .12em;
+  color: var(--off-white);
+  opacity: .75;
+  margin-top: 14px;
+}
+.gold-rule {
+  width: 120px; height: 1px; margin: 26px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ---------- Sections ---------- */
+.menu-section { margin-top: 52px; break-inside: avoid-page; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+}
+.section-subtitle {
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .08em;
+  color: var(--gold-light);
+  margin-top: 6px;
+  font-style: normal;
+}
+.section-rule {
+  width: 64px; height: 1px; margin: 16px auto 30px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+}
+
+/* ---------- Item grid ---------- */
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.items.compact { grid-template-columns: repeat(2, 1fr); }
+
+.item { break-inside: avoid; }
+
+.item-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 12px;
+  border: 1px solid rgba(211,171,94,.28);
+}
+
+.item-head { display: flex; align-items: baseline; gap: 8px; }
+.item-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+  letter-spacing: .04em;
+  color: var(--white);
+}
+.item-leader {
+  flex: 1;
+  border-bottom: 1px dotted rgba(245,241,232,.35);
+  transform: translateY(-4px);
+}
+.item-price {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.item-note {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--off-white);
+  opacity: .82;
+  margin-top: 5px;
+}
+
+/* ---------- Footer ---------- */
+.menu-footer {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(211,171,94,.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  letter-spacing: .1em;
+  color: var(--off-white);
+  opacity: .8;
+}
+.menu-footer .halal {
+  font-family: var(--font-display);
+  color: var(--gold);
+  letter-spacing: .2em;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  html, body { background: var(--teal); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { padding: 24px 32px; }
+  .menu-section { margin-top: 36px; }
+}
+
+@media (max-width: 900px) {
+  .items { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .items, .items.compact { grid-template-columns: 1fr; }
+  .menu-header .restaurant-name { font-size: 30px; }
+}
