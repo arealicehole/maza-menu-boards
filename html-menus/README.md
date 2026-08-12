@@ -49,6 +49,16 @@ for s in screen1-wraps screen2-plates screen3-loaded; do
 done
 ```
 
+4K TV screenshots (3840x2160 PNGs — keep the 1920x1080 CSS layout, render at 2x DPR):
+
+```bash
+for s in screen1-wraps screen2-plates screen3-loaded; do
+  chromium-browser --headless --disable-gpu --no-sandbox --hide-scrollbars \
+    --force-device-scale-factor=2 --window-size=1920,1080 \
+    --screenshot=$PWD/out/$s-4k.png file://$PWD/out/$s.html
+done
+```
+
 ALWAYS inspect screenshots with vision before delivering. Check: photos upright,
 no clipping/overflow, prices match menu.json, dead space filled.
 
