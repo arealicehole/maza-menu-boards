@@ -2,7 +2,7 @@
   "_comment": "Item -> real photo mapping. Keys are 'Section > Item' (exact names from menu.json). Photos are copied from PHOTO_LIB into photos/ on build. Add/adjust freely — no image generation, user content only.",
   "photo_lib": "/srv/storage/onedrive/Sulemon/Customer Files/maza/Video folder",
   "map": {
-    "Wraps > Beef Gyro": "menu_items/gyro/gyro-on-pita.jpg",
+    "Wraps > Beef Gyro": "menu_items/wraps/gyro-wrap-vertical.jpg",
     "Wraps > Beef + Lamb Shish Kebab Wrap": "menu_items/beef-shish-kebab/beef-shish-kebab-wrap.jpg",
     "Wraps > Chicken Shish Kebab Wrap": "menu_items/wraps/chicken-shish-kebab-wrap-vertical.jpg",
     "Wraps > Chicken Tikka Wrap": "menu_items/chicken-tikka/chicken-tikka-on-rice-close.jpg",
@@ -49,6 +49,6 @@
     "Sides > Maza Salad": "menu_items/sides/maza-salad-old-version.jpg",
     "Sides > Fries": "menu_items/sides/side-fries-vertical.jpg",
 
-    "Baklava > Walnut or Pistachio": "menu_items/baklava/baklava-tray-angle.jpg"
+    "Baklava > Cashew or Pistachio": "menu_items/baklava/baklava-tray-angle.jpg"
   }
 }

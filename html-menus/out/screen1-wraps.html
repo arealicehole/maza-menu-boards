@@ -28,6 +28,8 @@
   }
   .s1-card .photo-card { flex: 1; min-height: 0; }
   .s1-card .photo-card img { border: none; border-radius: 0; height: 100%; }
+  /* keep tall wrap photos from decapitating the food in the square cards */
+  .s1-card img[alt="Beef + Lamb Shish Kebab Wrap"] { object-position: center top; }
   .s1-card .card-detail {
     display: flex; align-items: baseline; justify-content: center; gap: 12px;
     padding: 10px 14px;

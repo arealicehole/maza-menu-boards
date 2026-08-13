@@ -34,7 +34,7 @@
           { "name": "Mixed", "items": [["Plates", "Mix Kebab"], ["Plates", "Maza Grill"], ["Plates", "Appetizer Plate"]] }
         ]
       ],
-      "gallery": [["Plates", "Chicken Tikka Plate"], ["Plates", "Beef + Lamb Shish Kebab"], ["Plates", "Maza Grill"], ["Plates", "Shredded Chicken Plate"], ["Plates", "Appetizer Plate"]],
+      "gallery": [["Plates", "Chicken Tikka Plate"], ["Plates", "Beef + Lamb Shish Kebab"], ["Plates", "Maza Grill"], ["Plates", "Shredded Chicken Plate"], ["Plates", "Shredded Steak Plate"]],
       "specials": {
         "title": "Specials",
         "hero": ["Specials", "Maza Special"],
@@ -53,9 +53,9 @@
       },
       "row2": {
         "burgers": { "section": "Burgers" },
-        "burgers_card": { "ref": ["Burgers", "Beef Burger"], "caption": "" },
+        "burgers_card": { "ref": ["Kids Meals", "Crispy Chicken Sandwich"], "caption": "", "_note": "no-fries sandwich photo for Burgers card; burger itself does not include fries" },
         "kids": { "section": "Kids Meals" },
-        "kids_card": { "ref": ["Kids Meals", "Crispy Chicken Sandwich"], "caption": "" },
+        "kids_card": { "ref": ["Kids Meals", "All Beef Burger"], "caption": "", "_note": "kids meal includes fries" },
         "sides_title": "Sides",
         "sides_groups": [
           { "name": "Dips & Spreads", "items": [["Sides", "Hummus with tahini and pita"], ["Sides", "Tzatziki"], ["Sides", "Muhammara"], ["Sides", "Baba Ghanoush"], ["Sides", "Tabouleh"]] },
@@ -65,8 +65,8 @@
         "sides_card": { "ref": ["Sides", "Kibbeh (3pc)"], "caption": "Kibbeh (3pc)" }
       },
       "row3": {
-        "desserts_card": { "ref": ["Baklava", "Walnut or Pistachio"], "caption": "" },
-        "desserts": { "title": "Desserts", "items": [["Baklava", "Walnut or Pistachio"]] },
+        "desserts_card": { "ref": ["Baklava", "Cashew or Pistachio"], "caption": "" },
+        "desserts": { "title": "Desserts", "items": [["Baklava", "Cashew or Pistachio"]] },
         "drinks": { "section": "Drinks" },
         "sharbat": { "section": "Sharbat" }
       }
